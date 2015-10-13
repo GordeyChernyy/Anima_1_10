@@ -1,0 +1,16 @@
+ Brush with fill 1: 
+   not working
+PgFill, Pg, BuffImage 
+Mouse Drag
+ ✔ Draw brush in Pg @done (15-05-12 13:12)
+ ✔ Draw white fill in PgFill (Second Treat) @done (15-05-12 16:45)
+Mouse release
+ ✔ Copy Pg -> BuffImage @done (15-05-12 18:51)
+ ✔ Clear Pg @done (15-05-12 18:51)
+ ✔ Pg.draw(PgFill) @done (15-05-12 18:51)
+ ✔ Pg.draw(Buffimage) @done (15-05-12 18:51)
+Brush conect after draw:
+Mouse Drag
+ ☐ Draw brush in Pg
+Mouse release
+ ☐ Draw shape 

@@ -1,0 +1,1100 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pl",
+				"players"
+			],
+			[
+				"pla",
+				"playersCount"
+			],
+			[
+				"Aud",
+				"AudioPlayer"
+			],
+			[
+				"tin",
+				"tint"
+			],
+			[
+				"frami",
+				"framesInScenes"
+			],
+			[
+				"frames",
+				"framesInScenes"
+			],
+			[
+				"la",
+				"LayersData"
+			],
+			[
+				"L",
+				"LayersData"
+			],
+			[
+				"au",
+				"audioPointer"
+			],
+			[
+				"blen",
+				"blendind"
+			],
+			[
+				"bl",
+				"blendmod"
+			],
+			[
+				"ble",
+				"blendind"
+			],
+			[
+				"else",
+				"else	else"
+			],
+			[
+				"cle",
+				"cleanPgfill"
+			],
+			[
+				"brushf",
+				"brushFillRelease"
+			],
+			[
+				"vert",
+				"vertex	vertex"
+			],
+			[
+				"end",
+				"endshape	endShape"
+			],
+			[
+				"beg",
+				"beginshape	beginShape"
+			],
+			[
+				"br",
+				"brushSelect"
+			],
+			[
+				"bruf",
+				"brushFillRelease"
+			],
+			[
+				"bru",
+				"brushFill"
+			],
+			[
+				"dra",
+				"drawLine"
+			],
+			[
+				"Pg",
+				"PGraphics"
+			],
+			[
+				"thr",
+				"thread"
+			],
+			[
+				"tri",
+				"triangle	triangle"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"en",
+				"endDraw"
+			],
+			[
+				"bd",
+				"brushDraw"
+			],
+			[
+				"mouse",
+				"mouse	mousePressed"
+			],
+			[
+				"hs",
+				"history"
+			],
+			[
+				"pg",
+				"pgfill"
+			],
+			[
+				"d",
+				"document"
+			],
+			[
+				"s",
+				"script	Tag"
+			],
+			[
+				"p",
+				"position"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "~A consignment shop \n!accepts ( a product )\n  for sale \nand \n!sets an ( initial price ). \n  ?When Each month that the ( item ) !doesn’t sell, \n( the price ) \n!is reduced \n  by 20 percent. \n  \n  ?When the ( item ) sells, \n~the item’s owner \n!receives \n  60 percent of the sale price, and \n~the shop \n!gets 40 percent. Draw a flowchart or write pseudocode to represent the logic of a program that allows the user to enter an original product price. The output is the sale price, the owner’s cut, and the shop’s cut each month for the first three months the item is on sale.",
+			"settings":
+			{
+				"buffer_size": 571,
+				"line_ending": "Unix",
+				"name": "~A consignment shop"
+			}
+		},
+		{
+			"file": "Anima_1_10.pde",
+			"settings":
+			{
+				"buffer_size": 4836,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Audio.pde",
+			"settings":
+			{
+				"buffer_size": 1420,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Display.pde",
+			"settings":
+			{
+				"buffer_size": 1144,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Interface.pde",
+			"settings":
+			{
+				"buffer_size": 5904,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Brushes.pde",
+			"settings":
+			{
+				"buffer_size": 3967,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Base.pde",
+			"settings":
+			{
+				"buffer_size": 1149,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 30 files for \"mute\"\n\n/Users/gordey/Projects/processing/Anima_1_10/Anima_1_10.pde:\n   88  import ddf.minim.*;\n   89  Minim minim;\n   90: boolean mute = false;\n   91  AudioPlayer player;\n   92  boolean audioExist = false;\n\n/Users/gordey/Projects/processing/Anima_1_10/Audio.pde:\n    1  // ----------------------------------------------------- Audio\n    2: void muteAudio(){\n    3:   if(player.isMuted()){\n    4:     player.unmute();\n    5    }else{\n    6:     player.mute();\n    7    }\n    8  }\n    9  void playAudio(){\n   10:   if(audioExist && !mute && (f+framesInScenes)*1000/12< player.length()){\n   11        player.setLoopPoints((f+framesInScenes)*1000/12, ((f+framesInScenes)+1)*1000/12);\n   12        player.loop(0);\n   ..\n   14  }\n   15  void playAudioFromIn(){\n   16:   if(audioExist && !mute && (f+framesInScenes)*1000/12< player.length()){\n   17      player.setLoopPoints((in+framesInScenes)*1000/12, (out+framesInScenes)*1000/12);\n   18      player.loop();\n   ..\n   21  }\n   22  void playAudioSync(){\n   23:   if(audioExist && !mute && (f+framesInScenes)*1000/12< player.length()){\n   24        player.cue((f+framesInScenes)*1000/12);\n   25     }\n\n/Users/gordey/Projects/processing/Anima_1_10/Base.pde:\n   38    if(f<out)f++;\n   39    thread(\"buffNextFrame\"); \n   40:   if(!mute)playAudio();\n   41  }\n   42  void prevFrame(){\n   43    if(f>in)f--;\n   44    thread(\"buffPrevFrame\");\n   45:   if(!mute)playAudio();\n   46  }\n   47  void deleteFrame(){\n\n/Users/gordey/Projects/processing/Anima_1_10/build-tmp/source/Anima_1_10.java:\n  109  \n  110  Minim minim;\n  111: boolean mute = false;\n  112  AudioPlayer player;\n  113  boolean audioExist = false;\n  ...\n  216  }\n  217  // ----------------------------------------------------- Audio\n  218: public void muteAudio(){\n  219:   if(player.isMuted()){\n  220:     player.unmute();\n  221    }else{\n  222:     player.mute();\n  223    }\n  224  }\n  225  public void playAudio(){\n  226:   if(audioExist && !mute && (f+framesInScenes)*1000/12< player.length()){\n  227        player.setLoopPoints((f+framesInScenes)*1000/12, ((f+framesInScenes)+1)*1000/12);\n  228        player.loop(0);\n  ...\n  230  }\n  231  public void playAudioFromIn(){\n  232:   if(audioExist && !mute && (f+framesInScenes)*1000/12< player.length()){\n  233      player.setLoopPoints((in+framesInScenes)*1000/12, (out+framesInScenes)*1000/12);\n  234      player.loop();\n  ...\n  237  }\n  238  public void playAudioSync(){\n  239:   if(audioExist && !mute && (f+framesInScenes)*1000/12< player.length()){\n  240        player.cue((f+framesInScenes)*1000/12);\n  241     }\n  ...\n  299    if(f<out)f++;\n  300    thread(\"buffNextFrame\"); \n  301:   if(!mute)playAudio();\n  302  }\n  303  public void prevFrame(){\n  304    if(f>in)f--;\n  305    thread(\"buffPrevFrame\");\n  306:   if(!mute)playAudio();\n  307  }\n  308  public void deleteFrame(){\n  ...\n  759  \n  760  -------- Audio\n  761: muteAudio()\n  762  playAudio()\n  763  playAudioFromIn()\n  ...\n 1070        if (key == 'f') nextFrame();\n 1071        if (key == 'a') loopTwo();\n 1072:       if (key == 'z') muteAudio();\n 1073        if (key == 'n') newLayer();\n 1074        if (key == '.') saveProj();\n ....\n 1156    if(playSwitcher){\n 1157      if(f!=f_total-1){ in = f; out = f+1;}\n 1158:     player.mute();\n 1159    }else{\n 1160      in = inoutStore[0];\n 1161      out = inoutStore[1];\n 1162:     player.unmute();\n 1163    }\n 1164    playSwitch();\n\n/Users/gordey/Projects/processing/Anima_1_10/Help.pde:\n    2  \n    3  -------- Audio\n    4: muteAudio()\n    5  playAudio()\n    6  playAudioFromIn()\n\n/Users/gordey/Projects/processing/Anima_1_10/Key.pde:\n   52        if (key == 'f') nextFrame();\n   53        if (key == 'a') loopTwo();\n   54:       if (key == 'z') muteAudio();\n   55        if (key == 'n') newLayer();\n   56        if (key == '.') saveProj();\n\n/Users/gordey/Projects/processing/Anima_1_10/Play.pde:\n    5    if(playSwitcher){\n    6      if(f!=f_total-1){ in = f; out = f+1;}\n    7:     player.mute();\n    8    }else{\n    9      in = inoutStore[0];\n   10      out = inoutStore[1];\n   11:     player.unmute();\n   12    }\n   13    playSwitch();\n\n28 matches across 7 files\n",
+			"settings":
+			{
+				"buffer_size": 4155,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "Key.pde",
+			"settings":
+			{
+				"buffer_size": 2309,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Play.pde",
+			"settings":
+			{
+				"buffer_size": 808,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Processing/Processing.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"task",
+				"Tasks: View as HTML"
+			],
+			[
+				"ta",
+				"Tasks: New"
+			],
+			[
+				"tas",
+				"Tasks: New"
+			],
+			[
+				"rel",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"pre",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"user",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"p",
+				"Preferences: Browse Packages"
+			],
+			[
+				"live",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"liverel",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"liv",
+				"LiveReload: Enable/disable plug-ins"
+			]
+		],
+		"width": 503.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/gordey/Projects/processing/Anima_1_10/Project.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Anima_1_10.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Brushes.pde",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/User/IDLE.tmTheme",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/User/wonderLog.tmLanguage",
+		"/Users/gordey/untitled.txt",
+		"/Users/gordey/Projects/processing/Anima_1_10/Audio.pde",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/SublimeText-Google-Translate-Plugin/Default (OSX).sublime-keymap",
+		"/Users/gordey/Projects/processing/Anima_1_10/Play.pde",
+		"/Users/gordey/test.txt",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/MarkdownEditing/README.md",
+		"/Users/gordey/test.md",
+		"/Users/gordey/Projects/processing/Anima_1_10/swatches.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Interface.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Key.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Buffer.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Todo.TODO",
+		"/Users/gordey/Projects/processing/Anima_1_10/Display.pde",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/HighlightWords/HighlightWords.sublime-settings",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/SublimeText-Google-Translate-Plugin/goTranslate.sublime-settings",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/User/HighlightWords.sublime-settings",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Applications/Processing.app/Contents/Java/ant.jar",
+		"/Applications/Processing.app/Contents/Java/ant-launcher.jar",
+		"/Users/gordey/Projects/processing/Anima_1_10/Base.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Frame.pde",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/PlainTasks/Default (OSX).sublime-keymap",
+		"/Users/gordey/Projects/processing/Anima_1_10/Shape.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Render.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Loop.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Help.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Functions.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Drawing.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/Anima_1_08.pde",
+		"/Users/gordey/Projects/processing/Anima_1_10/sketch.properties",
+		"/Users/gordey/Projects/processing/Anima_1_08/sketch.properties",
+		"/Users/gordey/Projects/processing/Anima_1_08/nullProjData.csv",
+		"/Users/gordey/Projects/processing/Anima_1_08/nullLayersData.csv",
+		"/Users/gordey/Projects/processing/Anima_1_08/Help.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Anima_1_08.sublime-workspace",
+		"/Users/gordey/Projects/processing/Anima_1_08/Anima_1_08.sublime-project",
+		"/Users/gordey/Sites/share/index.html",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/gordey/Sites/share/sketch.js",
+		"/Users/gordey/Sites/share/addons/p5.dom.js",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/gordey/Sites/Philosophers_Pinball/sketch.js",
+		"/Users/gordey/Sites/Philosophers_Pinball/index.html",
+		"/Users/gordey/Sites/Philosophers_Pinball/p5.js",
+		"/Users/gordey/Sites/scroll/addons/p5.dom.js",
+		"/Users/gordey/Sites/share/addons/p5.elt.js",
+		"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/PlainTasks/Readme.md",
+		"/Users/gordey/Projects/processing/Anima_1_08/Drawing.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Key.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Project.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Anima_1_08.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Buffer.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Utilities.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/swatches.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Shape.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Render.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Play.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Loop.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Interface.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Functions.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Frame.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Display.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Audio.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Base.pde",
+		"/Users/gordey/Projects/processing/Anima_1_08/Brushes.pde"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/gordey/Projects/processing/Anima_1_10"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"player",
+			"mute",
+			"f",
+			"@",
+			"rival",
+			"busy",
+			"~",
+			"\n~",
+			"!",
+			"~",
+			"!",
+			"illuminates",
+			"admonished",
+			"lucid",
+			" ?",
+			".",
+			"inherited",
+			"!Barack !Obama !inherited two ugly, intractable wars in Iraq and Afghanistan when he became president and set to work to end them. ",
+			"Barack",
+			"Draw",
+			"Uiasdf",
+			"Draw",
+			"a",
+			"Draw",
+			"asdf",
+			"asdfasd",
+			"asdf",
+			" A century before our age of distraction and restless productivity, Russell admonished against its perilous effects and championed the role of boredom and stillness in our conquest of happiness.\n",
+			"A century before our age of distraction and restless productivity, Russell admonished against its perilous effects and championed the role of boredom and stillness in our conquest of happiness.\n",
+			".",
+			" ",
+			"-",
+			" ",
+			"-",
+			" ",
+			"-",
+			"- linear",
+			"-",
+			"values",
+			"-",
+			"brushDraft",
+			"brushEraseUp",
+			"brushDraftUp",
+			"fill",
+			";",
+			"fill",
+			"fBefore",
+			";",
+			"112",
+			"color",
+			"fill",
+			"3",
+			"2",
+			"1",
+			"0",
+			"    if (key == '1') {colorChange(0);}\n    if (key == '2') {colorChange(1);}\n    if (key == '3') {colorChange(2);}\n    if (key == '4') {colorChange(3);}\n",
+			"buffImage",
+			"copyImage",
+			"copyImage()",
+			"public void copyImage()",
+			"copyImage",
+			"buffimage",
+			"buffImage",
+			"  if (buffImage!=null) {\n    image(buffImage, 0, 0, w/2, h/2);\n  }\n",
+			"drawing",
+			"dragShape",
+			"brushShape",
+			"dragShape",
+			"Mouse",
+			"img",
+			"e",
+			"s",
+			"S",
+			"s",
+			"0",
+			");",
+			"m",
+			"pgfill",
+			"draft",
+			"  draft = createGraphics(w,h,JAVA2D);\n",
+			"255",
+			"draft",
+			"dr",
+			"hsi",
+			"pgfill",
+			"hsi",
+			"hs",
+			"v",
+			"color",
+			"col",
+			")(?!\\\\([\\\\",
+			"d",
+			"12",
+			"25",
+			"12",
+			"123",
+			"2",
+			"1",
+			"12",
+			"123",
+			"12",
+			"233",
+			"12",
+			"123",
+			"233",
+			"12",
+			"255",
+			"12",
+			"255",
+			"12",
+			"255",
+			"12",
+			"255",
+			"12",
+			"25512",
+			"12",
+			"299",
+			"13",
+			"123",
+			"255",
+			"100",
+			"1",
+			"123",
+			"13",
+			"12",
+			"save",
+			"org",
+			"http"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"settings":
+					{
+						"buffer_size": 571,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								571,
+								571
+							]
+						],
+						"settings":
+						{
+							"auto_name": "~A consignment shop",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Anima_1_10.pde",
+					"settings":
+					{
+						"buffer_size": 4836,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3006,
+								3006
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Processing/Syntax/Processing.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1602.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Audio.pde",
+					"settings":
+					{
+						"buffer_size": 1420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Processing/Syntax/Processing.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 436.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Display.pde",
+					"settings":
+					{
+						"buffer_size": 1144,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1139,
+								1139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Processing/Syntax/Processing.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Interface.pde",
+					"settings":
+					{
+						"buffer_size": 5904,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4143,
+								4143
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Processing/Syntax/Processing.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Brushes.pde",
+					"settings":
+					{
+						"buffer_size": 3967,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								215,
+								215
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Processing/Syntax/Processing.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 516.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Base.pde",
+					"settings":
+					{
+						"buffer_size": 1149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Processing/Syntax/Processing.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 330.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"settings":
+					{
+						"buffer_size": 4155,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										154,
+										158
+									],
+									[
+										369,
+										373
+									],
+									[
+										403,
+										407
+									],
+									[
+										433,
+										437
+									],
+									[
+										475,
+										479
+									],
+									[
+										555,
+										559
+									],
+									[
+										806,
+										810
+									],
+									[
+										1049,
+										1053
+									],
+									[
+										1295,
+										1299
+									],
+									[
+										1416,
+										1420
+									],
+									[
+										1593,
+										1597
+									],
+									[
+										1773,
+										1777
+									],
+									[
+										1807,
+										1811
+									],
+									[
+										1837,
+										1841
+									],
+									[
+										1879,
+										1883
+									],
+									[
+										1966,
+										1970
+									],
+									[
+										2224,
+										2228
+									],
+									[
+										2474,
+										2478
+									],
+									[
+										2670,
+										2674
+									],
+									[
+										2798,
+										2802
+									],
+									[
+										2902,
+										2906
+									],
+									[
+										3075,
+										3079
+									],
+									[
+										3270,
+										3274
+									],
+									[
+										3377,
+										3381
+									],
+									[
+										3512,
+										3516
+									],
+									[
+										3734,
+										3738
+									],
+									[
+										3979,
+										3983
+									],
+									[
+										4086,
+										4090
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2269.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "Key.pde",
+					"settings":
+					{
+						"buffer_size": 2309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1390,
+								1390
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Processing/Syntax/Processing.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 337.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "Play.pde",
+					"settings":
+					{
+						"buffer_size": 808,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								680,
+								680
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Processing/Syntax/Processing.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 127.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"Audio.pde"
+			],
+			[
+				"k",
+				"Key.pde"
+			],
+			[
+				"pl",
+				"Play.pde"
+			],
+			[
+				"ba",
+				"Base.pde"
+			],
+			[
+				"ke",
+				"Key.pde"
+			],
+			[
+				"au",
+				"Audio.pde"
+			],
+			[
+				"in",
+				"Interface.pde"
+			],
+			[
+				"bru",
+				"Brushes.pde"
+			],
+			[
+				"di",
+				"Display.pde"
+			],
+			[
+				"pro",
+				"Project.pde"
+			],
+			[
+				"proj",
+				"Project.pde"
+			],
+			[
+				"sw",
+				"swatches.pde"
+			],
+			[
+				"p",
+				"Play.pde"
+			],
+			[
+				"buf",
+				"Buffer.pde"
+			],
+			[
+				"an",
+				"Anima_1_10.pde"
+			],
+			[
+				"pr",
+				"Project.pde"
+			],
+			[
+				"dis",
+				"Display.pde"
+			],
+			[
+				"br",
+				"Brushes.pde"
+			],
+			[
+				"my",
+				"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/PlainTasks/MyTask.TODO"
+			],
+			[
+				"m",
+				"/Users/gordey/Library/Application Support/Sublime Text 2/Packages/PlainTasks/MyTask.TODO"
+			],
+			[
+				"anim",
+				"Anima_1_08.pde"
+			],
+			[
+				"a",
+				"Audio.pde"
+			],
+			[
+				"u",
+				"untitled"
+			],
+			[
+				"key",
+				"Key.pde"
+			],
+			[
+				"dra",
+				"Drawing.pde"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true
+}
