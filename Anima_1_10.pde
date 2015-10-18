@@ -97,7 +97,7 @@ boolean audioExist = false;
 // -----------------------------------------------------  Key
 boolean CMD = false;
 // -----------------------------------------------------  Translate
-boolean moveImgX = true;
+boolean moveImgX = false;
 boolean moveImgY = false;
 int imgPosX = 0;
 int imgPosY = 0;
