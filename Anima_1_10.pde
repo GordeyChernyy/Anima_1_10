@@ -58,7 +58,7 @@ int swrow = 0; // swatches
 color col = color(0);
 import codeanticode.tablet.*;
 Tablet tablet;
-color colorBg = color(255);
+color colorBg = color(245);
 int brushSelect = 0;
 ArrayList <PVector> wcHisUp = new ArrayList<PVector>();
 ArrayList <PVector> wcHisDn = new ArrayList<PVector>();
@@ -97,7 +97,7 @@ boolean audioExist = false;
 // -----------------------------------------------------  Key
 boolean CMD = false;
 // -----------------------------------------------------  Translate
-boolean moveImgX = false;
+boolean moveImgX = true;
 boolean moveImgY = false;
 int imgPosX = 0;
 int imgPosY = 0;
@@ -111,7 +111,7 @@ void setup(){
   size(w,h+uiSize, OPENGL);
   noCursor();  
   cp5Setup();
-  if(backgroundMode) topImg = loadFilesToArray("/Users/gordey/Projects/Tolik_Fallacy_II/Animation/unicFrames/");
+  if(backgroundMode) topImg = loadFilesToArray("/Users/gordey/Projects/Glue/mask/");
 //  shapeSystem = new ShapeSys();
   draft = createGraphics(w,h,JAVA2D);
   minim = new Minim(this);

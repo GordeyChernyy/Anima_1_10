@@ -60,7 +60,7 @@ void brushFill(){
   pgfill.beginDraw();
   pgfill.beginShape();
   pgfill.noStroke();
-  pgfill.fill(col);
+  pgfill.fill(255);
   for (int i = 0; i < history.size(); ++i) {    
     PVector v = (PVector) history.get(i);
     pgfill.vertex(v.x, v.y);

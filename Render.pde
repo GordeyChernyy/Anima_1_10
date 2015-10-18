@@ -24,7 +24,8 @@ void renderFrames(){
       renderImage.endDraw();
     } 
   }
-  renderImage.save(scPath+"render/img"+f+".png");
+  String m = cp5.get(Textfield.class,"input").getText();
+  renderImage.save(scPath+"render/"+m+"_"+f+".png");
   nextFrame();
   if(renderCounter == f_total) {
     render = false;
